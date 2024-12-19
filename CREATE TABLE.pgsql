@@ -80,3 +80,11 @@ CREATE TABLE Supply (
     REFERENCES Component (id)
     ON DELETE CASCADE
 );
+
+CREATE TABLE PriceLog (
+    id serial PRIMARY KEY,
+    product_id INT,
+    old_price NUMERIC(15, 2),
+    new_price NUMERIC(15, 2),
+    changed_at TIMESTAMP DEFAULT NOW()
+);
